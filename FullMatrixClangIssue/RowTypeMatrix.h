@@ -21,9 +21,7 @@ namespace MbD {
 		RowTypeMatrix(int m) : Array<T>(m) {}
 		RowTypeMatrix(std::initializer_list<T> list) : Array<T>{ list } {}
 		void copyFrom(std::shared_ptr<RowTypeMatrix<T>> x);
-		virtual void zeroSelf() = 0;
-		//double maxMagnitude() override;
-		int numberOfElements() override;
+		int numberOfElements();
 
 		int nrow() {
 			return (int) this->size();

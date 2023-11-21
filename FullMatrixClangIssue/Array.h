@@ -29,17 +29,12 @@ namespace MbD {
 		Array(int count, const T& value) : std::vector<T>(count, value) {}
 		Array(typename std::vector<T>::iterator begin, typename std::vector<T>::iterator end) : std::vector<T>(begin, end) {}
 		Array(std::initializer_list<T> list) : std::vector<T>{ list } {}
-		virtual void initialize();
 		void copyFrom(std::shared_ptr<Array<T>> x);
-		virtual void zeroSelf();
-		virtual double sumOfSquares() = 0;
 		double rootMeanSquare();
-		virtual int numberOfElements();
 		void swapElems(int i, int ii);
-		virtual double maxMagnitude() = 0;
 		double maxMagnitudeOfVector();
 		void equalArrayAt(std::shared_ptr<Array<T>> array, int i);
-		virtual void atiput(int i, T value);
+		void atiput(int i, T value);
 		void magnifySelf(T factor);
 		void negateSelf();
 		void atitimes(int i, double factor);
@@ -57,32 +52,23 @@ namespace MbD {
 
 	};
 	template<typename T>
-	inline void Array<T>::initialize()
-	{
-	}
-	template<typename T>
 	inline void Array<T>::copyFrom(std::shared_ptr<Array<T>> x)
 	{
 		for (int i = 0; i < x->size(); i++) {
 			this->at(i) = x->at(i);
 		}
 	}
-	template<typename T>
-	inline void Array<T>::zeroSelf()
-	{
-		for (int i = 0; i < this->size(); i++) {
-			this->at(i) = (T)0;
-		}
-	}
+	//template<typename T>
+	//inline void Array<T>::zeroSelf()
+	//{
+	//	for (int i = 0; i < this->size(); i++) {
+	//		this->at(i) = (T)0;
+	//	}
+	//}
 	template<typename T>
 	inline double Array<T>::rootMeanSquare()
 	{
 		return std::sqrt(this->sumOfSquares() / this->numberOfElements());
-	}
-	template<typename T>
-	inline int Array<T>::numberOfElements()
-	{
-		return (int)this->size();
 	}
 	template<typename T>
 	inline void Array<T>::swapElems(int i, int ii)
@@ -122,30 +108,6 @@ namespace MbD {
 			this->at(ii) = array->at(i + ii);
 		}
 	}
-	//template<>
-	//inline void Array<double>::normalizeSelf()
-	//{
-	//	double length = this->length();
-	//	if (length == 0.0) throw std::runtime_error("Cannot normalize a null vector.");
-	//	this->magnifySelf(1.0 / length);
-	//}
-	//template<>
-	//inline void Array<double>::conditionSelf()
-	//{
-	//	constexpr double epsilon = std::numeric_limits<double>::epsilon();
-	//	double tol = maxMagnitude() * epsilon;
-	//	conditionSelfWithTol(tol);
-	//}
-	//template<>
-	//inline void Array<double>::conditionSelfWithTol(double tol)
-	//{
-	//	for (int i = 0; i < this->size(); i++)
-	//	{
-	//		double element = this->at(i);
-	//		if (element < 0.0) element = -element;
-	//		if (element < tol) this->atiput(i, 0.0);
-	//	}
-	//}
 	template<typename T>
 	inline void Array<T>::atiput(int i, T value)
 	{

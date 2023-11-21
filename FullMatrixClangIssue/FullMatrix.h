@@ -87,14 +87,14 @@ namespace MbD {
 		void atijplusFullRow(int i, int j, FRowsptr<T> fullRow);
 		void atijplusNumber(int i, int j, T value);
 		void atijminusNumber(int i, int j, T value);
-		double sumOfSquares() override;
-		void zeroSelf() override;
+		double sumOfSquares();
+		void zeroSelf();
 		FMatsptr<T> copy();
 		FullMatrix<T> operator+(const FullMatrix<T> fullMat);
 		FColsptr<T> transposeTimesFullColumn(const FColsptr<T> fullCol);
 		void magnifySelf(T factor);
 		T trace();
-		double maxMagnitude() override;
+		double maxMagnitude();
 		FColsptr<T> bryantAngles();
 		bool isDiagonal();
 		bool isDiagonalToWithin(double ratio);

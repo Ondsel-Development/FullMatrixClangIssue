@@ -27,16 +27,16 @@ namespace MbD {
 		double dot(std::shared_ptr<FullVector<T>> vec);
 		void atiplusNumber(int i, T value);
 		void atiminusNumber(int i, T value);
-		double sumOfSquares() override;
-		int numberOfElements() override;
-		void zeroSelf() override;
+		double sumOfSquares();
+		int numberOfElements();
+		void zeroSelf();
 		void atiplusFullVector(int i, std::shared_ptr<FullVector<T>> fullVec);
 		void atiplusFullVectortimes(int i, std::shared_ptr<FullVector<T>> fullVec, T factor);
 		void equalSelfPlusFullVectortimes(std::shared_ptr<FullVector<T>> fullVec, T factor);
-		double maxMagnitude() override;
+		double maxMagnitude();
 		void normalizeSelf();
 		double length();
-		virtual void conditionSelf();
+		void conditionSelf();
 		void conditionSelfWithTol(double tol);
 
 		std::ostream& printOn(std::ostream& s) const override;

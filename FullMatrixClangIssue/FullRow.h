@@ -161,9 +161,11 @@ namespace MbD {
 	{
 		//"a*b = a(i)b(j)"
 		auto nrow = (int)this->size();
-		auto answer = std::make_shared<FullMatrix<double>>(nrow);
+		auto answer = std::make_shared<FullMatrix<T>>(nrow);
 		for (int i = 0; i < nrow; i++)
 		{
+			//auto aaaa = fullRow->times(this->at(i));
+			//answer->at(i) = aaaa;
 			answer->atiput(i, fullRow->times(this->at(i)));
 		}
 		return answer;

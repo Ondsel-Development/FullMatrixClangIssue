@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="corecrt_math_defines.h" />
     <ClInclude Include="FullColumn.h" />
     <ClInclude Include="FullMatrix.h" />
     <ClInclude Include="FullRow.h" />

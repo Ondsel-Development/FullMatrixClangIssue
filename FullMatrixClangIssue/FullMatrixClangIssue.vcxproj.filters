@@ -56,5 +56,8 @@
     <ClInclude Include="RowTypeMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="corecrt_math_defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

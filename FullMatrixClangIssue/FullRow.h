@@ -164,9 +164,9 @@ namespace MbD {
 		auto answer = std::make_shared<FullMatrix<T>>(nrow);
 		for (int i = 0; i < nrow; i++)
 		{
-			auto aaaa = fullRow->times(this->at(i));
-			answer->at(i) = aaaa;
-			//answer->atiput(i, fullRow->times(this->at(i)));
+			//auto aaaa = fullRow->times(this->at(i));
+			//answer->at(i) = aaaa;
+			answer->atiput(i, fullRow->times(this->at(i)));
 		}
 		return answer;
 	}
